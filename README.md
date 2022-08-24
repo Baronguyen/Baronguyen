@@ -1,4 +1,4 @@
-<h1>Lab triển khai mô hình LEMP</h1>
+<h1>Lab Linux cơ bản</h1>
 
 
 <h2>1/ Thay đổi cổng kết nối SSH từ 22 thành 2022</h2>
