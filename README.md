@@ -175,5 +175,5 @@ Truy cập từ xa mysql
 <p>Khởi tạo user</p>
 <table style="width:100%;height:10%">CREATE USER 'phatnt'@'%' IDENTIFIED BY 'phatnt@123';</th></tr></table>
 <p>Gán quyền user</p> 
-<table style="width:100%;height:10%">GRANT ALL PRIVILEGES ON phatnt.* TO '<Tên user>'@'localhost';</th></tr></table>
+<table style="width:100%;height:10%">GRANT ALL PRIVILEGES ON phatnt.* TO 'phatnt'@'%';</th></tr></table>
 
