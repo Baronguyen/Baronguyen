@@ -142,7 +142,7 @@ Truy cập từ xa mysql
 <table style="width:100%;height:10%"><tr><th>sudo systemctl restart mysql</th></tr></table>
 <p>Kiểm tra lại trạng thái của mysql</p>
 <table style="width:100%;height:10%"><tr><th>sudo systemctl status mysql</th></tr></table>
-<h3>1.3 Cài đặt PHP8.0</h3>
+<h3>1.3 Cài đặt PHP8.1</h3>
 <p>Chạy lệnh</p>
 <table style="width:100%;height:10%"><tr><th>sudo add-apt-repository ppa:ondrej/php -y</th></tr></table>
 <p>Cài thêm các gói project để chạy PHP</p>
