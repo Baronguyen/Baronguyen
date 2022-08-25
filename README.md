@@ -138,7 +138,6 @@ Chấp nhận thay đổi
 Truy cập từ xa mysql
 <table style="width:100%;height:10%"><tr><th>sudo nano /etc/mysql/mysql.conf.d/mysqld.cnf</th></tr></table>
 <p>Tìm đến dòng bind-address, mặc định sẽ là bind-address = 127.0.0.1 các bạn hay thay đổi địa chỉ ip 127.0.0.1 = 0.0.0.0 để nhận tất cả các kết nối từ cục bộ đến bên ngoài. Nếu trong file mysqld.cnf của bạn không có dòng bind-address thì bạn tự thêm vào. Sau đó nhấn tổ hợp phim: Ctrl + X, Y, Enter với nano để lưu thay đổi.</p>
-<p>Ví dụ: Ở đây sử dụng VPS 1.52.201.132</p>
 <p>Sau đó restart lại MySQL để chấp nhận thay đổi mới</p>
 <table style="width:100%;height:10%"><tr><th>sudo systemctl restart mysql</th></tr></table>
 <p>Kiểm tra lại trạng thái của mysql</p>
@@ -146,6 +145,27 @@ Truy cập từ xa mysql
 <h3>1.3 Cài đặt PHP8.0</h3>
 <p>Chạy lệnh</p>
 <table style="width:100%;height:10%"><tr><th>sudo add-apt-repository ppa:ondrej/php -y</th></tr></table>
-
+<p>Cài thêm các gói project để chạy PHP</p>
+<table style="width:100%;height:10%"><tr><th>sudo apt install php php-fpm php-mysql</th></tr></table>
+<p>Để mở dịch vụ<p>
+<table style="width:100%;height:10%"><tr><th>sudo systemctl enable php-fpm --now</th></tr></table>
+<p>Kiểm tra trạng thái<p>
+<table style="width:100%;height:10%"><tr><th>sudo systemctl status  php8.1-fpm --now</th></tr></table>
+<h2>8/ Cài đặt giao diện Wordpress</h2>
+<p>Cài đặt wordpress</p>
+<p>Try cập đến thư mục www</p>
+<table style="width:100%;height:10%"><tr><th>/var/www</th></tr></table>
+<p>Tải mã nguồn wordpress chạy lệnh</p>
+<table style="width:100%;height:10%"><tr><th>wget https://wordpress.org/wordpress-5.9.3.zip</th></tr></table>
+<p>Giải nén file</p>
+<table style="width:100%;height:10%"><tr><th>unzip wordpress-5.9.3.zip</th></tr></table>
+<p>Truy cập đến thư mục mặc định của nginx thêm đoạn lệnh PHP</p>
+<table style="width:100%;height:10%"><tr><th> location ~ \.php$ {
+        try_files $uri =404;
+        fastcgi_pass unix:/run/php/php8.1-fpm.sock;
+        fastcgi_index index.php;
+        fastcgi_param SCRIPT_FILENAME $document_root$fastcgi_script_name;
+        include fastcgi_params;
+    }</th></tr></table>
 
 
