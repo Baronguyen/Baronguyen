@@ -135,3 +135,17 @@ Gán quyền user
 <table style="width:100%;height:10%"><tr><th>GRANT ALL PRIVILEGES ON *.* TO 'phatnt3'@'%';</th></tr></table>
 Chấp nhận thay đổi
 <table style="width:100%;height:10%"><tr><th>flush privileges;</th></tr></table>
+Truy cập từ xa mysql
+<table style="width:100%;height:10%"><tr><th>sudo nano /etc/mysql/mysql.conf.d/mysqld.cnf</th></tr></table>
+<p>Tìm đến dòng bind-address, mặc định sẽ là bind-address = 127.0.0.1 các bạn hay thay đổi địa chỉ ip 127.0.0.1 = 0.0.0.0 để nhận tất cả các kết nối từ cục bộ đến bên ngoài. Nếu trong file mysqld.cnf của bạn không có dòng bind-address thì bạn tự thêm vào. Sau đó nhấn tổ hợp phim: Ctrl + X, Y, Enter với nano để lưu thay đổi.</p>
+<p>Ví dụ: Ở đây sử dụng VPS 1.52.201.132</p>
+<p>Sau đó restart lại MySQL để chấp nhận thay đổi mới</p>
+<table style="width:100%;height:10%"><tr><th>sudo systemctl restart mysql</th></tr></table>
+<p>Kiểm tra lại trạng thái của mysql</p>
+<table style="width:100%;height:10%"><tr><th>sudo systemctl status mysql</th></tr></table>
+<h3>1.3 Cài đặt PHP8.0</h3>
+<p>Chạy lệnh</p>
+<table style="width:100%;height:10%"><tr><th>sudo add-apt-repository ppa:ondrej/php -y</th></tr></table>
+
+
+
