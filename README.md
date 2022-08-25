@@ -161,19 +161,19 @@ Truy cập từ xa mysql
 <table style="width:100%;height:10%"><tr><th>unzip wordpress-5.9.3.zip</th></tr></table>
 <p>Truy cập đến thư mục mặc định của nginx thêm đoạn lệnh PHP</p>
 <table style="width:100%;" ><tr><th>cd /etc/nginx/sites-enable/default</th></tr></table>
-<p>location ~ \.php$ {</p>
+*<p>location ~ \.php$ {</p>
         <p>try_files $uri =404;</p>
         <p>fastcgi_pass unix:/run/php/php8.1-fpm.sock;</p>
         <p>fastcgi_index index.php;</p>
         <p>fastcgi_param SCRIPT_FILENAME $document_root$fastcgi_script_name;</p>
-        <p>include fastcgi_params;}</p>
+        <p>include fastcgi_params;}</p>*
 <p>Khởi tạo database</p>
 <p>Truy cập đến mysql</p>
 <p>mysql -uroot -ppassword</p>
 <p>Chạy lệnh</p>
-<table style="width:100%;height:10%"><tr><th>create database phatnt</th></tr></table>
+<table style="width:100%;height:10%;"><tr><th>create database phatnt</th></tr></table>
 <p>Khởi tạo user</p>
-<table style="width:100%;height:10%">CREATE USER 'phatnt'@'%' IDENTIFIED BY 'phatnt@123';</th></tr></table>
+<table style="width:100%;">CREATE USER 'phatnt'@'%' IDENTIFIED BY 'phatnt@123';</th></tr></table>
 <p>Gán quyền user</p> 
-<table style="width:100%;height:10%">GRANT ALL PRIVILEGES ON phatnt.* TO 'phatnt'@'%';</th></tr></table>
+<table style="width:100%;">GRANT ALL PRIVILEGES ON phatnt.* TO 'phatnt'@'%';</th></tr></table>
 
