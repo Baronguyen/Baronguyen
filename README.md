@@ -128,7 +128,8 @@ Khởi động nginx hoạt động cùng hệ thống
 <p>Chạy câu lệnh cài đặt MySQL:</p>
 <table style="width:100%;height:10%"><tr><th>sudo apt-get install mysql-server -y</th></tr></table>
 Kiểm tra user có trong bảng user
-<table style="width:100%;height:10%"><tr><th>select user,authentication_string,plugin,host from mysql.user;</th></tr></table>
+<table style="width:100%;height:10%"><tr><th>select user,authentication_string,plugin,host from mysql.user;</th></tr></table> 
+<table style="width:100%;height:10%"><tr><th>(Nếu báo lỗi này Access denied for user 'root@localhost' (using password:NO) Chạy lệnh mysql -u root -p và nhập pass)</th></tr></table>
 Khởi tạo user
 <table style="width:100%;height:10%"><tr><th>create user 'phatnt3'@'%' identified by 'Phatnt@2022';</th></tr></table>
 Gán quyền user
